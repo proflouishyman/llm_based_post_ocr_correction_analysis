@@ -24,11 +24,11 @@ import pickle
 # example, changing the number of folds).
 vars = Variables("custom.py")
 vars.AddVariables(
-    ("OUTPUT_WIDTH", "", 5000),
-    ("MODEL_TYPES", "", ["naive_bayes", "neural"]),
-    ("PARAMETER_VALUES", "", [0.1, 0.5, 0.9]),
-    ("DATASETS", "", ["A", "B", "C"]),
-    ("FOLDS", "", 1),
+   # ("OUTPUT_WIDTH", "", 5000),
+   # ("MODEL_TYPES", "", ["naive_bayes", "neural"]),
+   # ("PARAMETER_VALUES", "", [0.1, 0.5, 0.9]),
+   # ("DATASETS", "", ["A", "B", "C"]),
+   # ("FOLDS", "", 1),
 )
 
 # Methods on the environment object are used all over the place, but it mostly serves to
@@ -45,8 +45,8 @@ env = Environment(
     # in values for these (note that e.g. the existence of a MODEL_TYPES variable above doesn't
     # automatically populate MODEL_TYPE, we'll do this with for-loops).
     BUILDERS={
-        "CreateData" : Builder(
-            action="python scripts/create_data.py --outputs ${TARGETS[0]}"
+        "Perform_OCR" : Builder(
+            action="python scripts/ --outputs ${TARGETS[0]}"
         ),
         "ShuffleData" : Builder(
             action="python scripts/shuffle_data.py --dataset ${SOURCES[0]} --outputs ${TARGETS}"
