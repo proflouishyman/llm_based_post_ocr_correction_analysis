@@ -3,6 +3,9 @@ import requests
 import time
 import os 
 
+
+#louis makes a thing
+
 url = "https://www.loc.gov/item/mss154040161/"
 basepath = "/home/sbacker2/projects/post_ocr_correction/data/"
 total_page_image = []
